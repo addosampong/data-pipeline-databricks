@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+    - name: jobs
+      database: raw
+      schema: jobs
+      tables:
+          - name: raw_job_postings
+            description: Job postings - one posting per row
+          - name: raw_job_skills
+            description: Job skills extracted from job postings

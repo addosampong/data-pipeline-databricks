@@ -1,0 +1,42 @@
+version: 2
+
+models:
+    - name: stg_job_postings
+      description: >
+          One row per job posting per scrape day.
+      columns:
+          - name: job_id
+            description: Unique identifier for the job posting.
+          - name: job_title
+            description: Title of the job posting.
+          - name: company_name
+            description: Name of the hiring company, trimmed of surrounding whitespace.
+          - name: job_location
+            description: Location of the job as listed in the posting.
+          - name: posted_via
+            description: Platform the job was posted through, with the leading "via" removed.
+          - name: job_posted_at
+            description: Timestamp when the job was posted.
+          - name: job_salary
+            description: Salary information listed in the posting.
+          - name: job_schedule_type
+            description: Schedule type of the job (e.g. full-time, part-time, contractor).
+          - name: job_work_from_home
+            description: Whether the job is remote / work from home.
+          - name: search_date
+            description: Date the job was scraped, formatted as yyyy-MM-dd.
+          - name: search_term
+            description: Search term used to find the job posting.
+          - name: search_location
+            description: Location used in the search query.
+
+    - name: stg_job_skills
+      description: >
+          One row per job skill associated with a job posting.
+      columns:
+          - name: job_id
+            description: Unique identifier for the job posting.
+          - name: skill_id
+            description: Unique identifier for the skill required for the job.
+          - name: skill_keyword
+            description: Keyword representing the skill required for the job.
